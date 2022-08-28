@@ -10,7 +10,7 @@ const hasText = (text) => {
 	return textStartsWith(text).exists() // 是否存在指定文本
 }
 const musicNotify = () => {
-	const m = '/storage/emulated/0/Android/data/com.tencent.mm/MicroMsg/Download/大籽-白月光与朱砂痣.mp3'
+	const m = '/storage/emulated/0/netease/cloudmusic/Music/Hanser - 勾指起誓.mp3'
 	media.playMusic(m);
 	sleep(media.getMusicDuration());
 }
@@ -32,8 +32,14 @@ const start = () => {
 		sleep(1000)
 		start()
 	} else {
+		/*
 		toast('停止活动了')
 		musicNotify()
+		*/
+		// 返回上一页
+		back()
+		sleep(1000)
+		start()
 	}
 }
 start()
